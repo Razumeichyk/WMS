@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of products</title>
+</head>
+<body>
+    <form action="/web/product/name">
+        <div class="form-floating">
+            <label for="controlInput">Product name</label><br/>
+            <input type="text" id="controlInput"
+                   placeholder="Type product here" aria-label="Type product here" aria-describedby="addon-wrapping"
+                   name="productName"/>
+            <input type="submit" value="Search"/><br/><br/>
+
+        </div>
+
+    </form>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Category</th>
+        </tr>
+        <tr th:each="product : ${products}" th:object="${product}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{name}">Sample</td>
+            <td th:text="*{quantity}">Sample</td>
+            <td th:text="*{unit}"></td>
+            <td th:text="*{category}">Sample</td>
+        </tr>
+        <tr>
+            <td colspan="2"><a th:href="@{/web/product/add}"></a> <input type="submit" value="Add product"></td>
+        </tr>
+    </table>
+</body>
+</html>

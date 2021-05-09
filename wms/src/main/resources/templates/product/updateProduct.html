@@ -1,0 +1,54 @@
+<!--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"-->
+<!--pageEncoding="ISO-8859-1"%>-->
+<!--<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+</head>
+<body>
+
+<h3>Update Product</h3>
+<form method="post" commandname="product" action="/web/product/save">
+    <table border="0" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" name="id"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" name="name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>
+                <input type="number" name="quantity"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td>
+                <input type="text" name="unit"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <input type="text" name="category"/>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Save"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
