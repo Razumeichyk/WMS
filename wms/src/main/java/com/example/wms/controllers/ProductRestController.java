@@ -9,7 +9,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/product")
+@RequestMapping(path = "api/products")
 public class ProductRestController {
 
     @Autowired

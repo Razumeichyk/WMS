@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -14,9 +15,12 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "product_id")
     private Long id;
     private String name;
     private Integer quantity;
     private String unit;
     private String category;
+    @ManyToMany(mappedBy = "deliveredProducts")
+    private List<Supplier> suppliers;
 }
