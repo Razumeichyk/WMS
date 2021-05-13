@@ -14,12 +14,11 @@ public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "supplier_id")
     private Long id;
     private String name;
     @ManyToMany
     @JoinTable(name = "supplier_products",
-        joinColumns = @JoinColumn(name = "supplier_id"),
+        joinColumns = @JoinColumn(name = "id"),
         inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> deliveredProducts;
